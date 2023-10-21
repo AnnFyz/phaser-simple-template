@@ -3,7 +3,7 @@ class MainScene extends Phaser.Scene {
         super('MainScene');
     }
     preload() {
-
+       this.load.image
     }
 
     create() {
