@@ -10,7 +10,7 @@ class MainScene extends Phaser.Scene {
 
     create() {
         this.pizza = this.add.image(game.config.width / 2, game.config.height / 2, 'pizza');
-        this.pizza.scaleX *= .5;
+        this.pizza.scaleX *= .35;
         this.pizza.scaleY *= this.pizza.scaleX;
         this.pizza.alpha = .5;
         this.pizza.setInteractive();
@@ -28,11 +28,17 @@ class MainScene extends Phaser.Scene {
 
     OnDown() {
         if (!this.wasClicked) {
-            this.pizza.scaleX *= .75;
-            //this.pizza.scaleY *= this.pizza.scaleX; Doesn't work !!!
-            this.pizza.scaleY *= .75;
+            this.pizza.scaleX = .25;
+            this.pizza.scaleY = this.pizza.scaleX;
             this.wasClicked = true; // use Tweens for click effect
-            this.scene.start('MainMenuScene');      
+            setTimeout(() => {
+                this.wasClicked = false;    
+                this.pizza.scaleX = .35;
+                this.pizza.scaleY = this.pizza.scaleX;
+            }, 300);
+
+            setTimeout(() => { this.scene.start('MainMenuScene');}, 300);
+              
         }
        
     }
@@ -40,4 +46,5 @@ class MainScene extends Phaser.Scene {
     update(){
         console.log("wasClicked " + this.wasClicked)
     }
+
 }
