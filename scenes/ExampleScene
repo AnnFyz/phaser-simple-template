@@ -1,4 +1,4 @@
-class   ExampleScene extends Phaser.Scene {
+class ExampleScene extends Phaser.Scene {
     constructor() {
         super('ExampleScene');
     }
@@ -8,6 +8,7 @@ class   ExampleScene extends Phaser.Scene {
         this.load.image('sky', 'assets/skies/space3.png');
         this.load.image('logo', 'assets/sprites/phaser3-logo.png');
         this.load.image('red', 'assets/particles/red.png');
+    
     }
 
     create() {
@@ -28,3 +29,4 @@ class   ExampleScene extends Phaser.Scene {
         particles.startFollow(logo);
     }
 }
+

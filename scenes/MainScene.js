@@ -3,11 +3,11 @@ class MainScene extends Phaser.Scene {
         super('MainScene');
     }
     preload() {
-       this.load.image
+        this.load.image('pizza', 'assets/DrinksOrange.png');
     }
 
     create() {
-        
+       this.pizza = this.add.image(100, 100, 'pizza');
 
     }
 }
