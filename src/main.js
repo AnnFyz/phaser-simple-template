@@ -3,7 +3,7 @@ window.onload = function () {
         type: Phaser.AUTO,
         width: 800,
         height: 600,
-        scene: [MainScene],
+        scene: [MainScene, MainMenuScene],
         physics: {
             default: 'arcade',
             arcade: {
@@ -12,5 +12,6 @@ window.onload = function () {
         }
     };
 
-    const game = new Phaser.Game(config);
+    game = new Phaser.Game(config);
+
 }
