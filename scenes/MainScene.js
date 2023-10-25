@@ -22,11 +22,11 @@ class MainScene extends Phaser.Scene {
         }, this);
 
     
-        this.pizza.on('pointerdown', this.OnDown, this);
+        this.pizza.on('pointerdown', this.onDown, this);
 
     }
 
-    OnDown() {
+    onDown() {
         if (!this.wasClicked) {
             this.pizza.scaleX = .25;
             this.pizza.scaleY = this.pizza.scaleX;
